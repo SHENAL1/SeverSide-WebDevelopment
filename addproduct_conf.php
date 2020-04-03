@@ -7,6 +7,7 @@ include("db.php");
 	echo "<title>".$pagename."</title>"; //display name of the page as window title
 	echo "<body>";
 	include ("headfile.html"); //include header layout file
+	include ("detectlogin.php"); //if the user has logged in it will show the login users details
 	echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 	
 	$proName = $_POST['proName'];

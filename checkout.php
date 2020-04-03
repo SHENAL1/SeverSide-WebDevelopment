@@ -17,10 +17,10 @@ include("db.php");
 	
 	
 	$currentdatetime = date('Y-m-d H:i:s');
-	echo "<hr><b>".$currentdatetime."</b><br>";
+	//echo "<hr><b>".$currentdatetime."</b><br>";
 	
 	$userId=$_SESSION['userid'];
-	echo "id = ".$userId."<br>";
+	//echo "id = ".$userId."<br>";
 	
 	//$orderTotal =
 	
@@ -29,8 +29,8 @@ include("db.php");
 						values (".$userId.",'".$currentdatetime."', ".$orderTotal.")";*/
 	
 	$SQL="insert into 
-						orders (userId, orderDateTime)
-						values (".$userId.",'".$currentdatetime."')";
+						orders (userId, orderDateTime, orderStatus )
+						values (".$userId.",'".$currentdatetime."', 'Placed')";
 					
 					$exeSQL = mysqli_query($conn, $SQL) or die (mysqli_error($conn));
 					
@@ -110,8 +110,7 @@ include("db.php");
  	 	 	}
 			//create a new table row to display the total (same as for basket.php) 
 			echo "<tr><td colspan='3'><b>Total Amount</b></td>
- 	 	 				<td>".$total_amount."</td>
- 	 	 				<td></td>";	
+ 	 	 				<td>".$total_amount."</td>";	
 				
 			echo "</table>";
 			
