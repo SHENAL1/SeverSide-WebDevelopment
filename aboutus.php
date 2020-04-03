@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 	$pagename="homteq: app and cloud controlled tech for your home"; //Create and populate a variable called $pagename
 	
 	echo "<link rel=stylesheet type=text/css href=mystylesheet.css>"; //Call in stylesheet
@@ -8,6 +10,8 @@
 	echo "<body>";
 	
 	include ("headfile.html"); //include header layout file
+	
+	include ("detectlogin.php"); //if the user has logged in it will show the login users details
 	
 	echo "<h4>".$pagename."</h4>"; //display name of the page on the web page
 	

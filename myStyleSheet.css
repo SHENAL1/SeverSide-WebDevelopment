@@ -116,3 +116,10 @@ padding:10px;
 text-align:left;
 color:#000000;
 }
+
+.loginStatus
+{
+	float:right;
+	margin-left:100px;
+	text-align: center;
+}

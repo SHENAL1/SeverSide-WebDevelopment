@@ -1,10 +1,13 @@
 <?php
+session_start();
+
 include ("db.php"); //include db.php file to connect to DB
 $pagename="Make your home smart"; //create and populate variable called $pagename
 echo "<link rel=stylesheet type=text/css href=mystylesheet.css>";
 echo "<title>".$pagename."</title>";
 echo "<body>";
 include ("headfile.html");
+include ("detectlogin.php"); //if the user has logged in it will show the login users details
 echo "<h4>".$pagename."</h4>";
 //create a $SQL variable and populate it with a SQL statement that retrieves product details
 $SQL="select prodId, prodName,prodDescripShort,prodPrice, prodPicNameSmall from Product";
@@ -29,7 +32,7 @@ echo "</td>";
 echo "<td style='border: 0px'>";
 echo "<p><h5>".$arrayp['prodName']."</h5>"; //display product name as contained in the array
 echo "<p>".$arrayp['prodDescripShort']."</p>";
-echo "<p><b>".$arrayp['prodPrice']."</b></p>";
+echo "<p><b>£ ".$arrayp['prodPrice']."</b></p>";
 echo "</td>";
 echo "</tr>";
 }
